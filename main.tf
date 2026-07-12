@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_attached_networks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_catalogs, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_dev_box_definitions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_environment_types, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_galleries, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.dev_centers : {
       for k2, v2 in coalesce(v1.dev_center_projects, {}) :
       "${k1}/${k2}" => merge(v2, {
-        dev_center_id = module.dev_centers.dev_centers["${k1}"].id
+        dev_center_id = module.dev_centers.dev_centers_id["${k1}"]
       })
     }
   ]...)
@@ -60,7 +60,7 @@ locals {
       for k2, v2 in coalesce(v1.dev_center_projects, {}) : {
         for k3, v3 in coalesce(v2.dev_center_project_environment_types, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          dev_center_project_id = module.dev_center_projects.dev_center_projects["${k1}/${k2}"].id
+          dev_center_project_id = module.dev_center_projects.dev_center_projects_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -71,9 +71,9 @@ locals {
       for k2, v2 in coalesce(v1.dev_center_projects, {}) : {
         for k3, v3 in coalesce(v2.dev_center_project_pools, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          dev_center_project_id            = module.dev_center_projects.dev_center_projects["${k1}/${k2}"].id
-          dev_center_attached_network_name = try(module.dev_center_attached_networks.dev_center_attached_networks["${k1}/${v3.dev_center_attached_network_name}"].name, v3.dev_center_attached_network_name)
-          dev_box_definition_name          = try(module.dev_center_dev_box_definitions.dev_center_dev_box_definitions["${k1}/${v3.dev_box_definition_name}"].name, v3.dev_box_definition_name)
+          dev_center_project_id            = module.dev_center_projects.dev_center_projects_id["${k1}/${k2}"]
+          dev_center_attached_network_name = try(module.dev_center_attached_networks.dev_center_attached_networks_name["${k1}/${v3.dev_center_attached_network_name}"], v3.dev_center_attached_network_name)
+          dev_box_definition_name          = try(module.dev_center_dev_box_definitions.dev_center_dev_box_definitions_name["${k1}/${v3.dev_box_definition_name}"], v3.dev_box_definition_name)
         })
       }
     ]...)
