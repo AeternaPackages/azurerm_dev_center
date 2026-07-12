@@ -1,4 +1,9 @@
 # --- azurerm_dev_center ---
+output "dev_centers_id" {
+  description = "Map of id values across all dev_centers, keyed the same as var.dev_centers"
+  value       = module.dev_centers.dev_centers_id
+}
+
 output "dev_centers_dev_center_uri" {
   description = "Map of dev_center_uri values across all dev_centers, keyed the same as var.dev_centers"
   value       = module.dev_centers.dev_centers_dev_center_uri
@@ -35,6 +40,11 @@ output "dev_centers_tags" {
 }
 
 # --- azurerm_dev_center_attached_network ---
+output "dev_center_attached_networks_id" {
+  description = "Map of id values across all dev_center_attached_networks, keyed the same as var.dev_center_attached_networks"
+  value       = module.dev_center_attached_networks.dev_center_attached_networks_id
+}
+
 output "dev_center_attached_networks_dev_center_id" {
   description = "Map of dev_center_id values across all dev_center_attached_networks, keyed the same as var.dev_center_attached_networks"
   value       = module.dev_center_attached_networks.dev_center_attached_networks_dev_center_id
@@ -51,6 +61,11 @@ output "dev_center_attached_networks_network_connection_id" {
 }
 
 # --- azurerm_dev_center_catalog ---
+output "dev_center_catalogs_id" {
+  description = "Map of id values across all dev_center_catalogs, keyed the same as var.dev_center_catalogs"
+  value       = module.dev_center_catalogs.dev_center_catalogs_id
+}
+
 output "dev_center_catalogs_catalog_adogit" {
   description = "Map of catalog_adogit values across all dev_center_catalogs, keyed the same as var.dev_center_catalogs"
   value       = module.dev_center_catalogs.dev_center_catalogs_catalog_adogit
@@ -77,6 +92,11 @@ output "dev_center_catalogs_resource_group_name" {
 }
 
 # --- azurerm_dev_center_dev_box_definition ---
+output "dev_center_dev_box_definitions_id" {
+  description = "Map of id values across all dev_center_dev_box_definitions, keyed the same as var.dev_center_dev_box_definitions"
+  value       = module.dev_center_dev_box_definitions.dev_center_dev_box_definitions_id
+}
+
 output "dev_center_dev_box_definitions_dev_center_id" {
   description = "Map of dev_center_id values across all dev_center_dev_box_definitions, keyed the same as var.dev_center_dev_box_definitions"
   value       = module.dev_center_dev_box_definitions.dev_center_dev_box_definitions_dev_center_id
@@ -113,6 +133,11 @@ output "dev_center_dev_box_definitions_tags" {
 }
 
 # --- azurerm_dev_center_environment_type ---
+output "dev_center_environment_types_id" {
+  description = "Map of id values across all dev_center_environment_types, keyed the same as var.dev_center_environment_types"
+  value       = module.dev_center_environment_types.dev_center_environment_types_id
+}
+
 output "dev_center_environment_types_dev_center_id" {
   description = "Map of dev_center_id values across all dev_center_environment_types, keyed the same as var.dev_center_environment_types"
   value       = module.dev_center_environment_types.dev_center_environment_types_dev_center_id
@@ -129,6 +154,11 @@ output "dev_center_environment_types_tags" {
 }
 
 # --- azurerm_dev_center_gallery ---
+output "dev_center_galleries_id" {
+  description = "Map of id values across all dev_center_galleries, keyed the same as var.dev_center_galleries"
+  value       = module.dev_center_galleries.dev_center_galleries_id
+}
+
 output "dev_center_galleries_dev_center_id" {
   description = "Map of dev_center_id values across all dev_center_galleries, keyed the same as var.dev_center_galleries"
   value       = module.dev_center_galleries.dev_center_galleries_dev_center_id
@@ -145,6 +175,11 @@ output "dev_center_galleries_shared_gallery_id" {
 }
 
 # --- azurerm_dev_center_project ---
+output "dev_center_projects_id" {
+  description = "Map of id values across all dev_center_projects, keyed the same as var.dev_center_projects"
+  value       = module.dev_center_projects.dev_center_projects_id
+}
+
 output "dev_center_projects_description" {
   description = "Map of description values across all dev_center_projects, keyed the same as var.dev_center_projects"
   value       = module.dev_center_projects.dev_center_projects_description
@@ -191,6 +226,11 @@ output "dev_center_projects_tags" {
 }
 
 # --- azurerm_dev_center_project_environment_type ---
+output "dev_center_project_environment_types_id" {
+  description = "Map of id values across all dev_center_project_environment_types, keyed the same as var.dev_center_project_environment_types"
+  value       = module.dev_center_project_environment_types.dev_center_project_environment_types_id
+}
+
 output "dev_center_project_environment_types_creator_role_assignment_roles" {
   description = "Map of creator_role_assignment_roles values across all dev_center_project_environment_types, keyed the same as var.dev_center_project_environment_types"
   value       = module.dev_center_project_environment_types.dev_center_project_environment_types_creator_role_assignment_roles
@@ -232,6 +272,11 @@ output "dev_center_project_environment_types_user_role_assignment" {
 }
 
 # --- azurerm_dev_center_project_pool ---
+output "dev_center_project_pools_id" {
+  description = "Map of id values across all dev_center_project_pools, keyed the same as var.dev_center_project_pools"
+  value       = module.dev_center_project_pools.dev_center_project_pools_id
+}
+
 output "dev_center_project_pools_dev_box_definition_name" {
   description = "Map of dev_box_definition_name values across all dev_center_project_pools, keyed the same as var.dev_center_project_pools"
   value       = module.dev_center_project_pools.dev_center_project_pools_dev_box_definition_name
