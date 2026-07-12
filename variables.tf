@@ -139,10 +139,10 @@ EOT
           identity_ids = optional(set(string))
           type         = string
         })
-        user_role_assignment = optional(object({
+        user_role_assignment = optional(list(object({
           roles   = set(string)
           user_id = string
-        }))
+        })))
       })))
       dev_center_project_pools = optional(map(object({
         dev_box_definition_name                 = string
