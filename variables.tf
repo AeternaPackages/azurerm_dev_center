@@ -76,7 +76,7 @@ EOT
     location                          = string
     name                              = string
     resource_group_name               = string
-    project_catalog_item_sync_enabled = optional(bool) # Default: false
+    project_catalog_item_sync_enabled = optional(bool)
     tags                              = optional(map(string))
     identity = optional(object({
       identity_ids = optional(set(string))
@@ -107,7 +107,7 @@ EOT
       location                  = string
       name                      = string
       sku_name                  = string
-      hibernate_support_enabled = optional(bool) # Default: false
+      hibernate_support_enabled = optional(bool)
       tags                      = optional(map(string))
     })))
     dev_center_environment_types = optional(map(object({
@@ -151,7 +151,7 @@ EOT
         location                                = string
         name                                    = string
         managed_virtual_network_regions         = optional(list(string))
-        single_sign_on_enabled                  = optional(bool) # Default: false
+        single_sign_on_enabled                  = optional(bool)
         stop_on_disconnect_grace_period_minutes = optional(number)
         tags                                    = optional(map(string))
       })))
