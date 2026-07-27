@@ -81,54 +81,54 @@ locals {
 }
 
 module "dev_centers" {
-  source      = "git::https://github.com/AeternaModules/azurerm_dev_center.git?ref=v4.80.0"
+  source      = "git::https://github.com/AeternaModules/azurerm_dev_center.git?ref=v4.81.0"
   dev_centers = local.dev_centers
 }
 
 module "dev_center_attached_networks" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_dev_center_attached_network.git?ref=v4.80.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_dev_center_attached_network.git?ref=v4.81.0"
   dev_center_attached_networks = local.dev_center_attached_networks
   depends_on                   = [module.dev_centers]
 }
 
 module "dev_center_catalogs" {
-  source              = "git::https://github.com/AeternaModules/azurerm_dev_center_catalog.git?ref=v4.80.0"
+  source              = "git::https://github.com/AeternaModules/azurerm_dev_center_catalog.git?ref=v4.81.0"
   dev_center_catalogs = local.dev_center_catalogs
   depends_on          = [module.dev_centers]
 }
 
 module "dev_center_dev_box_definitions" {
-  source                         = "git::https://github.com/AeternaModules/azurerm_dev_center_dev_box_definition.git?ref=v4.80.0"
+  source                         = "git::https://github.com/AeternaModules/azurerm_dev_center_dev_box_definition.git?ref=v4.81.0"
   dev_center_dev_box_definitions = local.dev_center_dev_box_definitions
   depends_on                     = [module.dev_centers]
 }
 
 module "dev_center_environment_types" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_dev_center_environment_type.git?ref=v4.80.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_dev_center_environment_type.git?ref=v4.81.0"
   dev_center_environment_types = local.dev_center_environment_types
   depends_on                   = [module.dev_centers]
 }
 
 module "dev_center_galleries" {
-  source               = "git::https://github.com/AeternaModules/azurerm_dev_center_gallery.git?ref=v4.80.0"
+  source               = "git::https://github.com/AeternaModules/azurerm_dev_center_gallery.git?ref=v4.81.0"
   dev_center_galleries = local.dev_center_galleries
   depends_on           = [module.dev_centers]
 }
 
 module "dev_center_projects" {
-  source              = "git::https://github.com/AeternaModules/azurerm_dev_center_project.git?ref=v4.80.0"
+  source              = "git::https://github.com/AeternaModules/azurerm_dev_center_project.git?ref=v4.81.0"
   dev_center_projects = local.dev_center_projects
   depends_on          = [module.dev_centers]
 }
 
 module "dev_center_project_environment_types" {
-  source                               = "git::https://github.com/AeternaModules/azurerm_dev_center_project_environment_type.git?ref=v4.80.0"
+  source                               = "git::https://github.com/AeternaModules/azurerm_dev_center_project_environment_type.git?ref=v4.81.0"
   dev_center_project_environment_types = local.dev_center_project_environment_types
   depends_on                           = [module.dev_center_projects]
 }
 
 module "dev_center_project_pools" {
-  source                   = "git::https://github.com/AeternaModules/azurerm_dev_center_project_pool.git?ref=v4.80.0"
+  source                   = "git::https://github.com/AeternaModules/azurerm_dev_center_project_pool.git?ref=v4.81.0"
   dev_center_project_pools = local.dev_center_project_pools
   depends_on               = [module.dev_center_attached_networks, module.dev_center_dev_box_definitions, module.dev_center_projects]
 }
